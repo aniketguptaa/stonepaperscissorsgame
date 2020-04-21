@@ -68,6 +68,6 @@ elif man_point > comp_point:
     print("Computer point is " , comp_point)
     print("Please Play again")
 else:
-    print(name + "and computer you both have tied")
+    print(name + " and computer you both have tied")
     print("Please Play again")
 
