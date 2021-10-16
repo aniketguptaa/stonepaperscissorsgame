@@ -1,7 +1,7 @@
 print("\t\t\tWELCOME TO STONE, PAPER, SCISSORS GAME PLAY NOW")
 import random
 comp_choice = ["s","p","sc"]
-
+#This game is related to kids to play in their freetime
 chance = 0
 chance_limit = 3
 comp_point = 0
@@ -16,7 +16,7 @@ print("s- Stone\np- paper\nsc- scissors")
 while chance < chance_limit:
     _input = input("\nStone, Paper, Scissors: ")
     _random = random.choice(comp_choice)
-
+#The logic begins from he
     if _input == _random:
         print("You both have ", _input)
         
@@ -45,6 +45,7 @@ while chance < chance_limit:
         print(f"{compoint}", comp_point)
         print("You lose!")
         print("computer have scissors but you have paper")
+        Print("You won the game, better luck next time")
     elif _input == "sc" and _random == "p":
         man_point = man_point + 1
         print(f"{manpoint}", man_point)
