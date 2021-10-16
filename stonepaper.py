@@ -1,5 +1,23 @@
-print("\t\t\tWELCOME TO STONE, PAPER, SCISSORS GAME PLAY NOW")
 import random
+import inquirer
+
+GAME_CHOICE = [
+  inquirer.List('answer',
+                message="\nChoose your choice ..",
+                choices=['STONE', 'PAPER', 'SCISSORS', '', 'QUIT'],
+            ),
+]
+
+GAME_CHOICE_VALUE = {
+  "STONE" : 's',
+  "PAPER" : "p",
+  "SCISSORS" : "sc",
+  "QUIT" : "q"
+}
+
+print("\t\t\tWELCOME TO STONE, PAPER, SCISSORS GAME PLAY NOW")
+
+
 comp_choice = ["s","p","sc"]
 #This game is related to kids to play in their freetime
 chance = 0
@@ -10,13 +28,18 @@ u = "you"
 com= "computer"
 compoint = "Computer point is: "
 manpoint = "Your point is: "
-print("Click to choose your option\n")
-print("s- Stone\np- paper\nsc- scissors")
+# print("Click to choose your option\n")
+# print("s- Stone\np- paper\nsc- scissors")
 
 while chance < chance_limit:
-    _input = input("\nStone, Paper, Scissors: ")
+    answers = inquirer.prompt(GAME_CHOICE)
+    _input = GAME_CHOICE_VALUE.get(answers["answer"])
     _random = random.choice(comp_choice)
-#The logic begins from he
+
+    if _input == 'q':
+        print("Bye !")
+        break
+    # The logic begins from he
     if _input == _random:
         print("You both have ", _input)
         
